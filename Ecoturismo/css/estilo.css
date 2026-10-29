@@ -16,19 +16,19 @@
    --azul-oscuro: #1a5fb4;        
 
 
-   --font-title: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
-   --font-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+   --fuente-titulo: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+   --fuente-cuerpo: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
 
 
-   --header-h: 4.5rem;
-   --gutter: max(1.25rem, calc((100vw - 74rem) / 2));
-   --radius: 1rem;
-   --radius-s: .6rem;
-   --radius-pill: 999px;
+   --altura-cabecera: 4.5rem;
+   --margen-lateral: max(1.25rem, calc((100vw - 74rem) / 2));
+   --radio: 1rem;
+   --radio-pequeno: .6rem;
+   --radio-pastilla: 999px;
 
 
-   --shadow: 0 1px 2px rgba(18, 40, 31, .06), 0 8px 24px rgba(18, 40, 31, .08);
-   --ease: .2s ease;
+   --sombra: 0 1px 2px rgba(18, 40, 31, .06), 0 8px 24px rgba(18, 40, 31, .08);
+   --transicion: .2s ease;
 }
 
 
@@ -43,7 +43,7 @@
 
 html {
    scroll-behavior: smooth;
-   scroll-padding-top: calc(var(--header-h) + 1rem);
+   scroll-padding-top: calc(var(--altura-cabecera) + 1rem);
 }
 
 
@@ -51,7 +51,7 @@ body {
    display: flex;             
    flex-direction: column;
    min-height: 100vh;
-   font-family: var(--font-body);
+   font-family: var(--fuente-cuerpo);
    font-size: 1.0625rem;
    line-height: 1.65;
    color: var(--negro);
@@ -64,7 +64,7 @@ main { flex: 1; }
 
 
 h1, h2, h3, h4 {
-   font-family: var(--font-title);
+   font-family: var(--fuente-titulo);
    font-weight: 700;
    line-height: 1.1;
    letter-spacing: -.02em;
@@ -83,7 +83,7 @@ p { max-width: 65ch; }
 a {
    color: var(--verde-oscuro);
    text-underline-offset: .2em;
-   transition: color var(--ease), background-color var(--ease);
+   transition: color var(--transicion), background-color var(--transicion);
 }
 a:hover { color: var(--verde-claro); }
 
@@ -121,7 +121,7 @@ em {
 .contenedor-detalle,
 .breadcrumb,
 #zona-contacto {
-   padding-inline: var(--gutter);
+   padding-inline: var(--margen-lateral);
 }
 
 
@@ -134,8 +134,8 @@ header {
    align-items: center;
    justify-content: flex-start;
    gap: .5rem 1.5rem;
-   min-height: var(--header-h);
-   padding: .5rem var(--gutter);
+   min-height: var(--altura-cabecera);
+   padding: .5rem var(--margen-lateral);
    background-color: var(--verde-oscuro);
    color: #fff;
    border-bottom: 3px solid var(--naranja);
@@ -172,7 +172,7 @@ header nav ul {
 header nav a {
    display: block;
    padding: .5rem 1rem;
-   border-radius: var(--radius-pill);
+   border-radius: var(--radio-pastilla);
    font-size: .98rem;
    font-weight: 600;
    color: rgba(255, 255, 255, .85);
@@ -203,7 +203,7 @@ footer :focus-visible,
 
 
 footer {
-   padding: 2rem var(--gutter);
+   padding: 2rem var(--margen-lateral);
    background-color: var(--verde-mas-oscuro);
    color: rgba(255, 255, 255, .8);
    font-size: .95rem;
@@ -226,17 +226,17 @@ button,
    justify-content: center;
    padding: .8rem 1.7rem;
    border: 2px solid var(--naranja);
-   border-radius: var(--radius-pill);
+   border-radius: var(--radio-pastilla);
    background-color: var(--naranja);
    color: var(--verde-mas-oscuro);
-   font-family: var(--font-body);
+   font-family: var(--fuente-cuerpo);
    font-size: 1rem;
    font-weight: 700;
    line-height: 1.2;
    text-decoration: none;
    cursor: pointer;
-   transition: background-color var(--ease), border-color var(--ease),
-               color var(--ease), transform var(--ease), box-shadow var(--ease);
+   transition: background-color var(--transicion), border-color var(--transicion),
+               color var(--transicion), transform var(--transicion), box-shadow var(--transicion);
 }
 .btn:hover,
 button:hover,
@@ -245,7 +245,7 @@ button:hover,
    border-color: var(--verde-oscuro);
    color: #fff;
    transform: translateY(-2px);
-   box-shadow: var(--shadow);
+   box-shadow: var(--sombra);
 }
 .btn:active,
 button:active,
@@ -274,11 +274,11 @@ label {
    width: 100%;
    padding: .8rem 1rem;
    border: 1px solid #bfc8b9;
-   border-radius: var(--radius-s);
+   border-radius: var(--radio-pequeno);
    background: #fff;
    color: var(--negro);
    font: inherit;
-   transition: border-color var(--ease), box-shadow var(--ease);
+   transition: border-color var(--transicion), box-shadow var(--transicion);
 }
 :where(input:not([type="radio"]):not([type="checkbox"]), select, textarea):hover {
    border-color: var(--gris-oscuro);
@@ -314,7 +314,7 @@ input[type="checkbox"] {
 
 
 #hero {
-   padding: 3rem var(--gutter);
+   padding: 3rem var(--margen-lateral);
    text-align: center;
    color: #fff;
    background-color: var(--verde-oscuro);
@@ -422,7 +422,7 @@ input[type="checkbox"] {
 }
 .barra-busqueda input {
    padding: .9rem 1.4rem .9rem 3.1rem;
-   border-radius: var(--radius-pill);
+   border-radius: var(--radio-pastilla);
    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2356635b' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E");
    background-repeat: no-repeat;
    background-position: 1.15rem center;
@@ -443,8 +443,8 @@ input[type="checkbox"] {
    overflow: hidden;
    background-color: var(--blanco);
    border: 1px solid var(--gris);
-   border-radius: var(--radius);
-   box-shadow: var(--shadow);
+   border-radius: var(--radio);
+   box-shadow: var(--sombra);
 }
 .ruta-horizontal:nth-child(even) { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); }
 .ruta-horizontal:nth-child(even) .imagen-ruta { order: 2; }
@@ -481,7 +481,7 @@ input[type="checkbox"] {
 
 .etiqueta {
    padding: .3rem .85rem;
-   border-radius: var(--radius-pill);
+   border-radius: var(--radio-pastilla);
    background-color: var(--gris-claro);
    color: var(--verde-oscuro);
    font-size: .75rem;
@@ -522,7 +522,7 @@ input[type="checkbox"] {
 .imagen-principal,
 .miniaturas img {
    overflow: hidden;
-   border-radius: var(--radius);
+   border-radius: var(--radio);
 }
 .imagen-principal { height: clamp(18rem, 42vw, 29rem); }
 .imagen-principal img {
@@ -559,7 +559,7 @@ input[type="checkbox"] {
 }
 .etiquetas span {
    padding: .35rem 1rem;
-   border-radius: var(--radius-pill);
+   border-radius: var(--radio-pastilla);
    font-size: .92rem;
    font-weight: 700;
 }
@@ -595,7 +595,7 @@ input[type="checkbox"] {
    padding: .8rem 1rem;
    background-color: var(--blanco);
    border: 1px solid var(--gris);
-   border-radius: var(--radius-s);
+   border-radius: var(--radio-pequeno);
    font-weight: 600;
 }
 .lista-servicios li::before {
@@ -626,12 +626,12 @@ input[type="checkbox"] {
    width: 100%;
    aspect-ratio: 16 / 10;
    object-fit: cover;
-   border-radius: var(--radius);
+   border-radius: var(--radio);
    margin-bottom: .2rem;
 }
 .tarjeta-miniatura span {
    padding: .25rem .8rem;
-   border-radius: var(--radius-pill);
+   border-radius: var(--radio-pastilla);
    background-color: var(--gris-claro);
    color: var(--verde-oscuro);
    font-size: .75rem;
@@ -646,12 +646,12 @@ input[type="checkbox"] {
 
 #reserva-rapida {
    position: sticky;
-   top: calc(var(--header-h) + 1.5rem);
+   top: calc(var(--altura-cabecera) + 1.5rem);
    padding: 1.75rem;
    background-color: var(--blanco);
    border: 1px solid var(--gris);
-   border-radius: var(--radius);
-   box-shadow: var(--shadow);
+   border-radius: var(--radio);
+   box-shadow: var(--sombra);
 }
 #reserva-rapida h3 { margin-bottom: 1.25rem; }
 #reserva-rapida form {
@@ -689,16 +689,16 @@ fieldset {
    padding: 1.75rem 1.5rem 1.5rem;
    background-color: var(--blanco);
    border: 1px solid var(--gris);
-   border-radius: var(--radius);
+   border-radius: var(--radio);
 }
 
 
 legend {
    padding: .3rem 1rem;
-   border-radius: var(--radius-pill);
+   border-radius: var(--radio-pastilla);
    background-color: var(--verde-oscuro);
    color: #fff;
-   font-family: var(--font-title);
+   font-family: var(--fuente-titulo);
    font-size: .98rem;
    font-weight: 600;
 }
@@ -720,11 +720,11 @@ fieldset > label {
    gap: .6rem;
    padding: .65rem 1.1rem;
    border: 1px solid #bfc8b9;
-   border-radius: var(--radius-pill);
+   border-radius: var(--radio-pastilla);
    background-color: #fff;
    color: var(--negro);
    cursor: pointer;
-   transition: border-color var(--ease), background-color var(--ease);
+   transition: border-color var(--transicion), background-color var(--transicion);
 }
 fieldset > label:hover { border-color: var(--verde-claro); }
 fieldset > label:has(input:checked) {
@@ -756,8 +756,8 @@ fieldset > label:has(input:checked) {
    padding: 2.5rem;
    background-color: var(--blanco);
    border: 1px solid var(--gris);
-   border-radius: var(--radius);
-   box-shadow: var(--shadow);
+   border-radius: var(--radio);
+   box-shadow: var(--sombra);
 }
 /* el primer h3 hace de título de la página */
 .info-contacto h3:first-of-type {
@@ -793,7 +793,7 @@ fieldset > label:has(input:checked) {
    grid-column: 2;
    grid-row: 1;
    padding: 2rem;
-   border-radius: var(--radius);
+   border-radius: var(--radio);
    background-color: var(--verde-oscuro);
    color: rgba(255, 255, 255, .9);
 }
@@ -811,8 +811,8 @@ fieldset > label:has(input:checked) {
 .placeholder-mapa {
    overflow: hidden;
    border: 1px solid var(--gris);
-   border-radius: var(--radius);
-   box-shadow: var(--shadow);
+   border-radius: var(--radio);
+   box-shadow: var(--sombra);
 }
 .placeholder-mapa img {
    width: 100%;
@@ -820,10 +820,9 @@ fieldset > label:has(input:checked) {
 }
 
 
-/* ---- Móvil: hasta 768px ---- */
 @media (max-width: 768px) {
    header {
-       position: static;            /* una cabecera de dos filas fija ocuparía demasiado */
+       position: static;            
        padding-block: .85rem;
    }
    header nav { width: 100%; }
